@@ -4,7 +4,7 @@ import './App.css';
 const loginEndpoint = "https://accounts.google.com/o/oauth2/v2/auth?" + 
                         "response_type=code"+ 
                         "&redirect_uri=http://localhost:9000/testAPI"+
-                        "&client_id=457616970060-1md3olpo431l4qtpe5qdcdl883bi1g8s.apps.googleusercontent.com"+
+                        "&client_id=%CLIENT_ID%"+
                         "&scope=openid email";
 class App extends React.Component {
   constructor(props) {
