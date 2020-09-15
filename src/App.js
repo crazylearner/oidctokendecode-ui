@@ -3,7 +3,7 @@ import './App.css';
 
 const loginEndpoint = "https://accounts.google.com/o/oauth2/v2/auth?" + 
                         "response_type=code"+ 
-                        "&redirect_uri=http://localhost:9000/testAPI"+
+                        "&redirect_uri=http://localhost:9000/oidctoken"+
                         "&client_id=%CLIENT_ID%"+
                         "&scope=openid email";
 class App extends React.Component {
@@ -17,7 +17,7 @@ class App extends React.Component {
       if(this.state.authToken != undefined) {
         //fire request and get decoded jwt
 
-        fetch('http://localhost:9000/testAPI/decode?authToken=' + this.state.authToken)
+        fetch('http://localhost:9000/oidctoken/decode?authToken=' + this.state.authToken)
         .then(res => res.json())
         .then((data) => {
           var json = data.decodedTokenJson;
